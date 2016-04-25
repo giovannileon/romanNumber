@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Gradle Quickstart',
+		'Implementation-Version': version
+	}
+}
+
+
+checkstyle {
+	ignoreFailures = true
+}
+
+pmd{
+	ignoreFailures = true
+  }
+
+
+repositories { mavenCentral() }
+
+dependencies {
+	compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+	compile group: 'org.apache.logging.log4j', name:'log4j-api', version: '2.5'
+	compile group: 'org.apache.logging.log4j', name:'log4j-core', version: '2.5'
+	compile group: 'org.testng', name:'testng', version: '6.9.10'
+	compile gradleApi()
+	compile localGroovy()
+}
+
+test { systemProperties 'property': 'value' }
+
+
+uploadArchives {
+	repositories {
+		flatDir { dirs 'repos' }
+	}
+}

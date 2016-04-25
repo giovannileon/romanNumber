@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="25" passed="25">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="126" started-at="2016-04-25T00:21:50Z" finished-at="2016-04-25T00:21:50Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="126" started-at="2016-04-25T00:21:50Z" finished-at="2016-04-25T00:21:50Z">
+      <class name="com.swa.samples.RomanNumberTranslatorTest">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="initialize" is-config="true" duration-ms="45" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="LetterTypeIrepeted()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="LetterTypeIrepeted" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LetterTypeIrepeted -->
+        <test-method status="PASS" signature="LetterTypeIwithTwoMoreVaueXCLX()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="LetterTypeIwithTwoMoreVaueXCLX" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LetterTypeIwithTwoMoreVaueXCLX -->
+        <test-method status="PASS" signature="ThereLetterTest()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="ThereLetterTest" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ThereLetterTest -->
+        <test-method status="PASS" signature="LetterTypeIwithTwoMoreVaue()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="LetterTypeIwithTwoMoreVaue" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LetterTypeIwithTwoMoreVaue -->
+        <test-method status="PASS" signature="TwoLetterWithLessValueToTheLeft()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="TwoLetterWithLessValueToTheLeft" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TwoLetterWithLessValueToTheLeft -->
+        <test-method status="PASS" signature="aSingleNumberC()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberC" duration-ms="6" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberC -->
+        <test-method status="PASS" signature="aSingleNumberL()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberL" duration-ms="4" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberL -->
+        <test-method status="PASS" signature="aSingleNumberI()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberI" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberI -->
+        <test-method status="PASS" signature="aSingleNumberD()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberD" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberD -->
+        <test-method status="PASS" signature="aSingleNumberM()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberM" duration-ms="4" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberM -->
+        <test-method status="PASS" signature="aSingleNumberV()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberV" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberV -->
+        <test-method status="PASS" signature="letter_Type5subtract_405()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="letter_Type5subtract_405" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letter_Type5subtract_405 -->
+        <test-method status="PASS" signature="letter_Type5subtract_450()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="letter_Type5subtract_450" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letter_Type5subtract_450 -->
+        <test-method status="PASS" signature="aSingleNumberX()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="aSingleNumberX" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aSingleNumberX -->
+        <test-method status="PASS" signature="letterTipoFiveRepetedLXL()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="letterTipoFiveRepetedLXL" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letterTipoFiveRepetedLXL -->
+        <test-method status="PASS" signature="letter_Type5subtract_9()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="letter_Type5subtract_9" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letter_Type5subtract_9 -->
+        <test-method status="PASS" signature="letter_Type5subtract_45()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="letter_Type5subtract_45" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- letter_Type5subtract_45 -->
+        <test-method status="PASS" signature="moreThanTwoLetters()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="moreThanTwoLetters" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- moreThanTwoLetters -->
+        <test-method status="PASS" signature="fourLetterBaseTen()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="fourLetterBaseTen" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fourLetterBaseTen -->
+        <test-method status="PASS" signature="saveNumberInFile()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="saveNumberInFile" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveNumberInFile -->
+        <test-method status="PASS" signature="threeLetterBaseTen()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="threeLetterBaseTen" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- threeLetterBaseTen -->
+        <test-method status="PASS" signature="numbers_I_and_base10_cannot_repeat_just_4times()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="numbers_I_and_base10_cannot_repeat_just_4times" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numbers_I_and_base10_cannot_repeat_just_4times -->
+        <test-method status="PASS" signature="numberWithBaseVCanNotBeRepeated()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="numberWithBaseVCanNotBeRepeated" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numberWithBaseVCanNotBeRepeated -->
+        <test-method status="PASS" signature="numberWithBaseLCanNotBeRepeated()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="numberWithBaseLCanNotBeRepeated" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numberWithBaseLCanNotBeRepeated -->
+        <test-method status="PASS" signature="numberWithBaseDCanNotBeRepeated()[pri:0, instance:com.swa.samples.RomanNumberTranslatorTest@3701eaf6]" name="numberWithBaseDCanNotBeRepeated" duration-ms="0" started-at="2016-04-24T19:21:50Z" finished-at="2016-04-24T19:21:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- numberWithBaseDCanNotBeRepeated -->
+      </class> <!-- com.swa.samples.RomanNumberTranslatorTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
