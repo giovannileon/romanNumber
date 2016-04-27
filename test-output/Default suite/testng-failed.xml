@@ -6,4 +6,14 @@
       <class name="com.swa.samples.RomanNumberTranslatorTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.swa.samples.RomanNumberTranslatorTest">
+        <methods>
+          <include name="letterTipoOneandRepetedLeft_IIV"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.swa.samples.RomanNumberTranslatorTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -63,60 +63,21 @@ public class RomanNumberTranslatorTest {
 	}
 
 	@Test
-	public void ThereLetterTest() {
-		int number = roman.convert("VIII");
-		assertEquals(8, number);
-	}
-
-	@Test
-	public void TwoLetterWithLessValueToTheLeft() {
+	public void twoLetterWithLessValueToTheLeftIV() {
 		int number = roman.convert("IV");
 		assertEquals(4, number);
 	}
 
 	@Test
-	public void moreThanTwoLetters() {
+	public void thereLetterTest_VIII() {
+		int number = roman.convert("VIII");
+		assertEquals(8, number);
+	}
+
+	@Test
+	public void moreThanTwoLetters_XLV() {
 		int number = roman.convert("XLV");
 		assertEquals(45, number);
-	}
-
-	@Test
-	public void numberWithBaseVCanNotBeRepeated() {
-
-		try {
-
-			roman.convert("VV");
-			Assert.fail("No exception was throw it is a invalid Number");
-		} catch (InvalidRomanNumberException e) {
-			// if come here test is ok
-		}
-
-	}
-
-	@Test
-	public void numberWithBaseLCanNotBeRepeated() {
-
-		try {
-
-			roman.convert("LL");
-			Assert.fail("No exception was throw");
-		} catch (InvalidRomanNumberException e) {
-			// if come here test is ok
-		}
-
-	}
-
-	@Test
-	public void numberWithBaseDCanNotBeRepeated() {
-
-		try {
-
-			roman.convert("DDD");
-			Assert.fail("No exception was throw");
-		} catch (InvalidRomanNumberException e) {
-			// if come here test is ok
-		}
-
 	}
 
 	@Test
@@ -130,21 +91,60 @@ public class RomanNumberTranslatorTest {
 	}
 
 	@Test
-	public void threeLetterBaseTen() {
+	public void fourLetterBaseTen() {
 		try {
-			int number = roman.convert("XXX");
-			assertEquals(30, number);
-
+			roman.convert("XXXXXX");
+			Assert.fail("No exception was throw it is a invalid Number");
 		} catch (InvalidRomanNumberException e) {
 			// if come here test is ok
 		}
 	}
 
 	@Test
-	public void fourLetterBaseTen() {
+	public void numberWithBaseVCanNotBeRepeated_VV() {
+
 		try {
-			roman.convert("XXXX");
+
+			roman.convert("VV");
 			Assert.fail("No exception was throw it is a invalid Number");
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+
+	}
+
+	@Test
+	public void numberWithBaseLCanNotBeRepeated_LL() {
+
+		try {
+
+			roman.convert("LL");
+			Assert.fail("No exception was throw");
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+
+	}
+
+	@Test
+	public void numberWithBaseDCanNotBeRepeated_DDD() {
+
+		try {
+
+			roman.convert("DDD");
+			Assert.fail("No exception was throw");
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+
+	}
+
+	@Test
+	public void threeLetterBaseTen() {
+		try {
+			int number = roman.convert("XXX");
+			assertEquals(30, number);
+
 		} catch (InvalidRomanNumberException e) {
 			// if come here test is ok
 		}
@@ -183,9 +183,53 @@ public class RomanNumberTranslatorTest {
 	}
 
 	@Test
+	public void letterTypeIrepeted() {
+		try {
+			roman.convert("CCCC");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+
+	@Test
+	public void letterTypeIwithTwoMoreVaueVIX() {
+		try {
+			roman.convert("VIX");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+
+	@Test
 	public void letter_Type5subtract_9() {
 		try {
 			roman.convert("VIV");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+
+	@Test
+	public void letterTypeIwithTwoMoreVaue_IXX() {
+		try {
+			roman.convert("IXX");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+
+	@Test
+	public void letterTypeIwithTwoMoreVaueXCLX() {
+		try {
+			roman.convert("XCLX");
 			Assert.fail("No exception was throw it is a invalid Number");
 
 		} catch (InvalidRomanNumberException e) {
@@ -203,46 +247,82 @@ public class RomanNumberTranslatorTest {
 			// if come here test is ok
 		}
 	}
-
+	
 	@Test
-	public void LetterTypeIrepeted() {
+	public void letterTipoFiveRepeted_XCC() {
 		try {
-			roman.convert("CCCC");
+			roman.convert("XCC");
 			Assert.fail("No exception was throw it is a invalid Number");
 
 		} catch (InvalidRomanNumberException e) {
 			// if come here test is ok
 		}
 	}
-
+	
 	@Test
-	public void LetterTypeIwithTwoMoreVaue() {
+	public void letterTipoFiveRepeted_CMM() {
 		try {
-			roman.convert("IXX");
+			roman.convert("CMM");
 			Assert.fail("No exception was throw it is a invalid Number");
 
 		} catch (InvalidRomanNumberException e) {
 			// if come here test is ok
 		}
 	}
-
 	@Test
-	public void LetterTypeIwithTwoMoreVaueXCLX() {
+	public void letterTipoFiveRepeted_IXVI() {
 		try {
-			roman.convert("XCLX");
+			roman.convert("IXVI");
 			Assert.fail("No exception was throw it is a invalid Number");
 
 		} catch (InvalidRomanNumberException e) {
 			// if come here test is ok
 		}
 	}
-  
+	
+	@Test
+	public void letterTipoFiveRepeted_IVI() {
+		try {
+			roman.convert("IVI");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+	
+	@Test
+	public void letterTipoFiveRepeted_CMC() {
+		try {
+			roman.convert("CMC");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+	
+	@Test
+	public void letterTipoOneandRepetedLeft_IIV() {
+		try {
+			roman.convert("IIV");
+			Assert.fail("No exception was throw it is a invalid Number");
+
+		} catch (InvalidRomanNumberException e) {
+			// if come here test is ok
+		}
+	}
+	
+		
+
 	@Test
 	public void saveNumberInFile() {
 
-		String filePath = "C:/temp/hello.txt";
+		String filePath = "C:/tmp/hello.txt";
 		File f = new File(filePath);
 		roman.saveNumber(filePath, "X equals 10\r\n");
 		Assert.assertTrue(f.exists());
 	}
+	
+
 }

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite name="Failed suite [Command line suite]">
+  <test name="Command line test" preserve-order="false">
     <classes>
       <class name="com.swa.samples.RomanNumberTranslatorTest"/>
     </classes>
-  </test> <!-- Default test -->
-  <test name="Default test(failed)">
+  </test> <!-- Command line test -->
+  <test name="Command line test(failed)">
     <classes>
       <class name="com.swa.samples.RomanNumberTranslatorTest">
         <methods>
-          <include name="letterTipoOneandRepetedLeft_IIV"/>
+          <include name="saveNumberInFile"/>
           <include name="initialize"/>
+          <include name="letter_Type5subtract_9"/>
         </methods>
       </class> <!-- com.swa.samples.RomanNumberTranslatorTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

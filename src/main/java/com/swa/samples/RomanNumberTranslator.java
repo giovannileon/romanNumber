@@ -4,7 +4,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.Hashtable;
 
 import java.util.Map;
@@ -32,136 +31,153 @@ public class RomanNumberTranslator {
 
 	public int convert(String romanNumber) {
 		// TODO Auto-generated method stub
-		int value = 0;
-		int indexNextLetter = 0;
-		int length = romanNumber.length();
-		char nextRomanLetter;
-		char currentRomanLetter;
 
-		int currentValue = 0;
-		int base10counter = 0;
+		String currentRomanLetter;
+		int totalRomanValue = 0;
+		int type1Counter = 0;
 
-		for (int i = 0; i < length; i++) {
-			indexNextLetter = i + 1;
+		// int
+		String lastRomanLetter = "";
+		int lastRomanNumberValue = 0;
+		int currentRomanValue = 0;
 
-			currentRomanLetter = romanNumber.charAt(i);
+		for (int i = 0; i < romanNumber.length();) {
 
-			if (indexNextLetter < length) {
-				nextRomanLetter = romanNumber.charAt(indexNextLetter);
+			if (areThereTwoLetterGratherNext(romanNumber.substring(i))) {
+				throw new InvalidRomanNumberException();
+			}
 
-				if (isLetterType1(currentRomanLetter)) {
-					base10counter++;
-					verifiedLetterType1NextTwoValuesGrather(romanNumber, i);
+			if (isLetterSubtractingEgualsToNextOne(romanNumber.substring(i))) {
+				throw new InvalidRomanNumberException();
+			}
 
-					if (base10counter >= 3) {
-						throw new InvalidRomanNumberException();
-					}
-				} else {
-					base10counter = 0;
-				}
+			currentRomanLetter = getCurrentRomanNumber(romanNumber.substring(i));
+			currentRomanValue = getArabicValue(currentRomanLetter);
 
-				if (isLetterType5(currentRomanLetter)) {
-					verifiedLetterType5(romanNumber, i);
-				}
-
-				currentValue = calculateValue(currentRomanLetter, nextRomanLetter);
-
+			if (isLetterType1(currentRomanLetter)) {
+				type1Counter++;
 			} else {
-				currentValue = decodeTable.get(String.valueOf(currentRomanLetter));
+				type1Counter = 0;
 			}
-			value += currentValue;
 
-		}
-		return value;
-	}
-
-	private boolean isLetterType1(char currentRomanLetter) {
-		if (currentRomanLetter == 'I' || currentRomanLetter == 'X' || currentRomanLetter == 'C'
-				|| currentRomanLetter == 'M') {
-			return true;
-		}
-		return false;
-	}
-
-	private void verifiedLetterType1NextTwoValuesGrather(String romanNumber, int index) {
-
-		char currentRomanLetter = romanNumber.charAt(index);
-		char nextRomanLetter = romanNumber.charAt(index + 1);
-		char threeRomanLetter;
-		if (index + 2 < romanNumber.length()) {
-			threeRomanLetter = romanNumber.charAt(index + 2);
-			if (firstLetterGratherTo(nextRomanLetter, currentRomanLetter)
-					&& firstLetterGratherTo(threeRomanLetter, currentRomanLetter)) {
+			if (isLetterType5(lastRomanLetter) && (lastRomanNumberValue < currentRomanValue)) {
 				throw new InvalidRomanNumberException();
-
 			}
 
-		}
-	}
-
-	private boolean firstLetterGratherTo(char firstLetter, char secondLetter) {
-		int firstValue = decodeTable.get(String.valueOf(firstLetter));
-		int secondValue = decodeTable.get(String.valueOf(secondLetter));
-
-		if (firstValue > secondValue) {
-			return true;
-		}
-		return false;
-	}
-
-	private boolean isLetterType5(char currentRomanLetter) {
-		if (currentRomanLetter == 'V' || currentRomanLetter == 'L' || currentRomanLetter == 'D') {
-			return true;
-		}
-		return false;
-	}
-
-	private void verifiedLetterType5(String romanNumber, int index) {
-
-		char currentRomanLetter = romanNumber.charAt(index);
-		char nextRomanLetter = romanNumber.charAt(index + 1);
-
-		if (isPairNumberBase5(currentRomanLetter, nextRomanLetter)) {
-			throw new InvalidRomanNumberException();
-		}
-
-		char threeRomanLetter;
-		if (index + 2 < romanNumber.length()) {
-			threeRomanLetter = romanNumber.charAt(index + 2);
-			if (isLetterType5(threeRomanLetter)) {
+			if (isLetterType5(lastRomanLetter) && isLetterType5(currentRomanLetter)
+					&& isLetterType5Equals(lastRomanLetter, currentRomanLetter)) {
 				throw new InvalidRomanNumberException();
-
 			}
 
+			if (type1Counter > 3) {
+				throw new InvalidRomanNumberException();
+			}
+
+			totalRomanValue += currentRomanValue;
+			lastRomanLetter = currentRomanLetter;
+			lastRomanNumberValue = currentRomanValue;
+			i = i + currentRomanLetter.length();
+
 		}
+		return totalRomanValue;
+
 	}
 
-	private boolean isPairNumberBase5(char currentRomanLetter, char nextRomanLetter) {
-		int currentValue = decodeTable.get(String.valueOf(currentRomanLetter));
-		int nextRomanValue = decodeTable.get(String.valueOf(nextRomanLetter));
-
-		if (isLetterType5(currentRomanLetter) && isLetterType5(nextRomanLetter)) {
-			if (nextRomanValue >= currentValue) {
+	private boolean isLetterSubtractingEgualsToNextOne(String romanNumber) {
+		if (romanNumber.length() > 2) {
+			int firtLetterValue = getValue(String.valueOf(romanNumber.charAt(0)));
+			int secondLetterValue = getValue(String.valueOf(romanNumber.charAt(1)));
+			int thirdLetterValue = getValue(String.valueOf(romanNumber.charAt(2)));
+			if ((firtLetterValue < secondLetterValue) && (firtLetterValue == thirdLetterValue)) {
 				return true;
 			}
 		}
 		return false;
+	}
+
+	private boolean areThereTwoLetterGratherNext(String romanNumber) {
+
+		if (romanNumber.length() > 2) {
+			int firtLetterValue = getValue(String.valueOf(romanNumber.charAt(0)));
+			int secondLetterValue = getValue(String.valueOf(romanNumber.charAt(1)));
+			int thirdLetterValue = getValue(String.valueOf(romanNumber.charAt(2)));
+			if ((secondLetterValue > firtLetterValue) && (thirdLetterValue > firtLetterValue)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private String getCurrentRomanNumber(String romanStringValue) {
+
+		String currentLetter = String.valueOf(romanStringValue.charAt(0));
+		int currentLetterValue = getValue(currentLetter);
+
+		if (romanStringValue.length() > 1) {
+			String nextRomanLetter = String.valueOf(romanStringValue.charAt(1));
+			int nextLetterValue = getValue(nextRomanLetter);
+			if (currentLetterValue < nextLetterValue) {
+				return currentLetter.concat(nextRomanLetter);
+			}
+		}
+		return currentLetter;
 
 	}
 
-	private int calculateValue(char currentRomanLetter, char nextRomanLetter) {
-		int currentValue = decodeTable.get(String.valueOf(currentRomanLetter));
-		if (firstLetterGratherTo(nextRomanLetter, currentRomanLetter)) {
-			currentValue = currentValue * -1;
+	private int getValue(String currentRomanLetter) {
+		String currentLetter = String.valueOf(currentRomanLetter.charAt(0));
+		int currentLetterValue = decodeTable.get(currentLetter);
+		return currentLetterValue;
+	}
+
+	private int getArabicValue(String currentRomanLetter) {
+
+		int currentLetterValue = getValue(currentRomanLetter);
+
+		if (currentRomanLetter.length() > 1) {
+			if (isLetterType5(String.valueOf(currentRomanLetter.charAt(0)))) {
+				throw new InvalidRomanNumberException();
+			}
+			String nextRomanLetter = String.valueOf(currentRomanLetter.charAt(1));
+			int nextLetterValue = getValue(nextRomanLetter);
+			return nextLetterValue - currentLetterValue;
 		}
-		return currentValue;
+		return currentLetterValue;
+	}
+
+	private boolean isLetterType1(String currentRomanNumber) {
+
+		if (currentRomanNumber.length() == 1) {
+			if (currentRomanNumber.equals("I") || currentRomanNumber.equals("X") || currentRomanNumber.equals("C")
+					|| currentRomanNumber.equals("M")) {
+
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean isLetterType5(String currentRomanLetter) {
+
+		if (currentRomanLetter.contains("V") || currentRomanLetter.contains("L") || currentRomanLetter.contains("D")) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isLetterType5Equals(String lastRomanLetter, String currentRomanLetter) {
+		if (lastRomanLetter.charAt(lastRomanLetter.length() - 1) == currentRomanLetter
+				.charAt(currentRomanLetter.length() - 1)) {
+			return true;
+		}
+		return false;
 	}
 
 	public void saveNumber(String filePath, String result) {
 
 		File file = new File(filePath);
 
-		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file,true))) {
+		try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(file, true))) {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
@@ -176,5 +192,4 @@ public class RomanNumberTranslator {
 		}
 
 	}
-
 }
